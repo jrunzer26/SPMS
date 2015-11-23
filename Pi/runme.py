@@ -257,6 +257,8 @@ resetVar = False
 
 #create the GUI
 gui = GUI(reset,pausePlay,skip)
+
+firstSongLoaded = False
 while 1:
     x = ""
 
@@ -265,13 +267,8 @@ while 1:
         print "Arduino input:" + x
 
     lst = []
-    if gui.reset == "RESET":
-        print('yolo i got the reset stuff')
-        resetVar = True;
-        ser.write("Tap VIP")
-        ser.write(')')
 
-    elif x == "RFID":
+    if x == "RFID":
 
         for i in range(0, 5):
             lst.append(ser.readline().rstrip())
@@ -288,20 +285,22 @@ while 1:
                 print("INVALID VIP")
             resetVar = False
 
-    elif x == "PAUSE":
-        pausePlay()
 
-    elif x == "SKIP":
-        skip()
 
     if len(userList) > 0 and not pygame.mixer.music.get_busy()  :
-        song = getNextSong()
-        #print song
-        if(song != ''):
-            pygame.mixer.music.load(song)
+        if( not firstSongLoaded):
+            currentSong = getNextSong()
+            nextSong = getNextSong()
 
-            ser.write(song)
-            ser.write('(')
-            print "Playing: " + song
+        else:
+            currentSong = nextSong
+            nextSong = getNextSong()
+
+        if(currentSong != ''):
+            pygame.mixer.music.load(currentSong)
+
+            gui.updateSong(currentSong)
+            gui.updateNextSong(nextSong)
+
             pygame.mixer.music.play()
 

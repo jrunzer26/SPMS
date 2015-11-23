@@ -4,54 +4,60 @@ import sys
 from Tkinter import *
 
 class GUI (object):
-   def updateSong(self,message):
-      self.Csong.set(message)
-  
-   
-   def __init__(self,reset,pausePlay,skip):
-      self.reset = reset
-      self.pausePlay = pausePlay
-      self.skip = skip
-      
-      font_style = "Arial"
-      font_size = 20
-      root = Tk()
-      w = root.winfo_screenwidth()
-      h = root.winfo_screenheight()
-      root.geometry("%dx%d+0+0"%(w,h))
-         
-      rfidString = StringVar()
-      rfidString.set('reset stuff')
+    def updateSong(self,song):
+        self.Csongtext.set(song)
 
-      rfidtag="5465923269"
-      root.configure(background="#005c99")
-      self.Csong = Label(text="What's playing now:",bg = "#00e64d",font=(font_style, font_size),relief=RIDGE,width=20)
-      self.rfid = Label(text="Last Rfid Tap",relief=RIDGE,font=(font_style, font_size),width=20)
-      self.up_next = Label(text="Up next",relief=RIDGE,font=(font_style, font_size),width=20)
-      self.Csongtext = Label(text="Current Song",relief=RIDGE,font=(font_style, font_size),width=30)
-      self.rfidtext = Label(textvariable = rfidString,relief=RIDGE,font=(font_style, font_size),width=30)
-      self.up_nexttext = Label(text="Up Next Song",relief=RIDGE,font=(font_style, font_size),width=30)
-       
+    def updateNextSong(self,song):
+        self.up_nexttext.set(song)
 
-      self.Csong.grid(row=1,column=1, padx =10, pady = 27)
-      self.rfid.grid(row=2,column=1)
-      self.up_next.grid(row=3,column=1, pady = 27)
-      self.Csongtext.grid(row=1,column=4,columnspan=2, padx=10)
-      self.rfidtext.grid(row=2,column=4,columnspan=2)
-      self.up_nexttext.grid(row=3,column=4,columnspan=2)
+    def updateRFID(self,tag):
+        self.rfidtext.set(tag)
 
 
+    def __init__(self,reset,pausePlay,skip):
+        self.reset = reset
+        self.pausePlay = pausePlay
+        self.skip = skip
+
+        font_style = "Arial"
+        font_size = 20
+        root = Tk()
+        w = root.winfo_screenwidth()
+        h = root.winfo_screenheight()
+        root.geometry("%dx%d+0+0"%(w,h))
+
+        rfidString = StringVar()
+        rfidString.set('reset stuff')
+
+        rfidtag="5465923269"
+        root.configure(background="#005c99")
+        self.Csong = Label(text="What's playing now:",bg = "#00e64d",font=(font_style, font_size),relief=RIDGE,width=20)
+        self.rfid = Label(text="Last Rfid Tap",relief=RIDGE,font=(font_style, font_size),width=20)
+        self.up_next = Label(text="Up next",relief=RIDGE,font=(font_style, font_size),width=20)
+        self.Csongtext = Label(text="Current Song",relief=RIDGE,font=(font_style, font_size),width=30)
+        self.rfidtext = Label(textvariable = rfidString,relief=RIDGE,font=(font_style, font_size),width=30)
+        self.up_nexttext = Label(text="Up Next Song",relief=RIDGE,font=(font_style, font_size),width=30)
 
 
-      self.reset2 = Button(root, text ="Reset",bg = "red",font=(font_style, font_size), command = self.reset(self))
-      self.pause2 = Button(root, text ="Pause",relief=GROOVE,bg = "#00e64d", font=(font_style, font_size),
+        self.Csong.grid(row=1,column=1, padx =10, pady = 27)
+        self.rfid.grid(row=2,column=1)
+        self.up_next.grid(row=3,column=1, pady = 27)
+        self.Csongtext.grid(row=1,column=4,columnspan=2, padx=10)
+        self.rfidtext.grid(row=2,column=4,columnspan=2)
+        self.up_nexttext.grid(row=3,column=4,columnspan=2)
+
+
+
+
+        self.reset2 = Button(root, text ="Reset",bg = "red",font=(font_style, font_size), command = self.reset(self))
+        self.pause2 = Button(root, text ="Pause",relief=GROOVE,bg = "#00e64d", font=(font_style, font_size),
                       command = self.pausePlay(self))
-      self.play2 = Button(root, text ="Play",font=(font_style, font_size), command = self.pausePlay(self))
-      self.skip2 = Button(root, text ="Skip", font=(font_style, font_size), command = self.skip(self))
-      self.skip2.grid(row=4,column=1,ipadx=20, pady=30)
-      self.pause2.grid(row=4,column=3,ipadx=14,padx=10)
-      self.reset2.grid(row=4,column=4,ipadx=20,padx=10)
+        self.play2 = Button(root, text ="Play",font=(font_style, font_size), command = self.pausePlay(self))
+        self.skip2 = Button(root, text ="Skip", font=(font_style, font_size), command = self.skip(self))
+        self.skip2.grid(row=4,column=1,ipadx=20, pady=30)
+        self.pause2.grid(row=4,column=3,ipadx=14,padx=10)
+        self.reset2.grid(row=4,column=4,ipadx=20,padx=10)
 
 
 
-      root.mainloop()
+        root.mainloop()
