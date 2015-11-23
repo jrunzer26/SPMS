@@ -37,6 +37,7 @@ pauseStatus = 0
 """
 
 def reset(self):
+    print 'reset called'
     global userList
     global songIndex
     global vipUser
@@ -225,7 +226,7 @@ def hasnotbeenPlayed(song):
         return False
 
 """Pauses the music currently being played"""
-def pausePlay():
+def pausePlay(self):
     global pauseStatus
     global userList
     if pauseStatus == 0 and not len(userList) == 0:
@@ -238,7 +239,7 @@ def pausePlay():
 
 
 
-def skip():
+def skip(self):
     global pauseStatus
     if len(userList) >= 1:
         pauseStatus = 0
