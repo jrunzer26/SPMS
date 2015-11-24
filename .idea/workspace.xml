@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d21532c-8f79-412a-8b54-a550b8ee1745" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pi/GUI.py" afterPath="$PROJECT_DIR$/Pi/GUI.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pi/runme.py" afterPath="$PROJECT_DIR$/Pi/runme.py" />
     </list>
     <ignored path="SPMS.iws" />
@@ -24,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="runme.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="runme.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pi/runme.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.586206">
-              <caret line="311" column="24" selection-start-line="311" selection-start-column="24" selection-end-line="311" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.63001144">
+              <caret line="300" column="0" selection-start-line="300" selection-start-column="0" selection-end-line="300" selection-end-column="0" />
               <folding>
                 <element signature="e#44#65#0" expanded="true" />
               </folding>
@@ -36,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUI.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GUI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pi/GUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6796009">
-              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
               <folding>
                 <element signature="e#19#29#0" expanded="true" />
               </folding>
@@ -64,8 +63,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Pi/Music.py" />
-        <option value="$PROJECT_DIR$/Pi/runme.py" />
         <option value="$PROJECT_DIR$/Pi/GUI.py" />
+        <option value="$PROJECT_DIR$/Pi/runme.py" />
       </list>
     </option>
   </component>
@@ -366,22 +365,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pi/runme.py">
+    <entry file="file://$PROJECT_DIR$/Pi/GUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.586206">
-          <caret line="311" column="24" selection-start-line="311" selection-start-column="24" selection-end-line="311" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
           <folding>
-            <element signature="e#44#65#0" expanded="true" />
+            <element signature="e#19#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pi/GUI.py">
+    <entry file="file://$PROJECT_DIR$/Pi/runme.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6796009">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.63001144">
+          <caret line="300" column="0" selection-start-line="300" selection-start-column="0" selection-end-line="300" selection-end-column="0" />
           <folding>
-            <element signature="e#19#29#0" expanded="true" />
+            <element signature="e#44#65#0" expanded="true" />
           </folding>
         </state>
       </provider>

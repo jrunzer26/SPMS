@@ -5,6 +5,7 @@ from User import User
 from GUI import GUI
 import serial
 import pygame
+import thread
 
     
 
@@ -258,7 +259,7 @@ resetVar = False
 
 
 
-def main():
+def main(threadName):
     global gui
     firstSongLoaded = False
     while 1:
@@ -309,4 +310,5 @@ def main():
 
 #create the GUI
 gui = GUI(reset,pausePlay,skip)
+thread.start_new(main,('main thread',))
 gui.getRoot().mainloop()
