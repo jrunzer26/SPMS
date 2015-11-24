@@ -34,11 +34,15 @@ pauseStatus = 0
 # checks to see if a tag is tapped on the rfid reader
 
 
+def resetCallback():
+    gui.updateRFID('Tap VIP User')
+    global resetVar
+    resetVar = True
 """Adds or removes a user by rfid whether it has a text file or not
 @param rfidTag the list that contains the RFID tag number
 """
 
-def reset(self):
+def reset():
     print 'reset called'
     global userList
     global songIndex
@@ -228,20 +232,24 @@ def hasnotbeenPlayed(song):
         return False
 
 """Pauses the music currently being played"""
-def pausePlay(self):
+def pausePlay():
+    print 'pause play called'
+    
     global pauseStatus
     global userList
     if pauseStatus == 0 and not len(userList) == 0:
         pygame.mixer.music.pause()
         pauseStatus = 1
+        gui.updatePauseButton("Play")
     elif len(finalSongList) > 0:
-
+        gui.updatePauseButton("Pause")
         pygame.mixer.music.unpause()
         pauseStatus = 0
 
 
 
-def skip(self):
+def skip():
+    print 'skip called'
     global pauseStatus
     if len(userList) >= 1:
         pauseStatus = 0
@@ -261,10 +269,16 @@ resetVar = False
 
 def main(threadName):
     global gui
+    global resetVar
     firstSongLoaded = False
+    print 'main thread called'
+    counter = 0;
     while 1:
         x = ""
-
+        
+        if counter %100000 == 1 :
+            print 'loop'
+        counter = counter + 1
         if ser.inWaiting() > 0:
             x = ser.readline().rstrip()
             print "Arduino input:" + x
@@ -306,6 +320,7 @@ def main(threadName):
                 gui.updateNextSong(nextSong)
 
                 pygame.mixer.music.play()
+    print 'done loop'
 
 
 #create the GUI

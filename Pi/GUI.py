@@ -11,13 +11,20 @@ class GUI (object):
         self.up_nexttext["text"] = song
 
     def updateRFID(self,tag):
-        self.rfidtext["text"] = tag
+        self.rfidtext.set(tag)
+
+    def updatePauseButton(self,status):
+        self.pause["text"] = status
 
 
     def __init__(self,reset,pausePlay,skip):
-        self.reset = reset
-        self.pausePlay = pausePlay
-        self.skip = skip
+        def r ():
+            reset()
+        def p ():
+            pausePlay()
+        def s ():
+            skip()
+            
 
         font_style = "Arial"
         font_size = 20
@@ -49,11 +56,11 @@ class GUI (object):
 
 
 
-        self.reset2 = Button(self.root, text ="Reset",bg = "red",font=(font_style, font_size), command = self.reset(self))
+        self.reset2 = Button(self.root, text ="Reset",bg = "red",font=(font_style, font_size), command = r)
         self.pause2 = Button(self.root, text ="Pause",relief=GROOVE,bg = "#00e64d", font=(font_style, font_size),
-                      command = self.pausePlay(self))
-        self.play2 = Button(self.root, text ="Play",font=(font_style, font_size), command = self.pausePlay(self))
-        self.skip2 = Button(self.root, text ="Skip", font=(font_style, font_size), command = self.skip(self))
+                      command = p)
+        self.play2 = Button(self.root, text ="Play",font=(font_style, font_size), command = p)
+        self.skip2 = Button(self.root, text ="Skip", font=(font_style, font_size), command = s)
         self.skip2.grid(row=4,column=1,ipadx=20, pady=30)
         self.pause2.grid(row=4,column=3,ipadx=14,padx=10)
         self.reset2.grid(row=4,column=4,ipadx=20,padx=10)
