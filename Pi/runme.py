@@ -9,9 +9,6 @@ import thread
 
     
 
-pygame
-pygame.init()
-pygame.mixer.init()
 
 
 finalSongList = []
@@ -22,6 +19,7 @@ songIndex = 0
 vipUser = User([00,00,00,00,00])
 blankUser = User([0,0,0,0,0])
 global gui
+
 
 
 
@@ -79,6 +77,7 @@ def updateUser(rfidTag):
     inUserList = False
     inUserRemovedList = False
     user = User(rfidTag)
+    gui.updateRFID(rfidTag)
 
 
     if vipUser.equals(blankUser):
@@ -172,9 +171,7 @@ def createPlaylist():
                     break
             if c:
                 uniqueSong.append(n)
-        """
-        print uniqueSong
-        """
+
         for n in uniqueSong:
             count = -1
             for j in songList:
@@ -191,10 +188,7 @@ def createPlaylist():
         for n in range(len(groupList)-1,-1, -1):
             for j in range(len(groupList[n])):
                 finalSongList.append(groupList[n][j])
-        """
-        print "finalSongList"
-        print finalSongList
-        """
+
     else:
         finalSongList.append('')
 
@@ -209,12 +203,6 @@ def getNextSong():
             songIndex = 0
             songsPlayed = []
     songsPlayed.append(finalSongList[songIndex])
-    """
-    print "Songs Played"
-    print songsPlayed
-    print "Song in get nextSong"
-    print finalSongList[songIndex]
-    """
     return finalSongList[songIndex]
 
 """Checks if the song has alreay been played"""
@@ -257,10 +245,7 @@ def skip():
         skipSongName = getNextSong()
         pygame.mixer.music.load(skipSongName)
         print "Playing: " + skipSongName
-        ser.write(skipSongName)
-        ser.write('(')
         pygame.mixer.music.play()
-        gui.updateSkip('lets go to the next song')
 
 
 """This is the input stream from the arduino to the Pi"""
@@ -271,6 +256,11 @@ resetVar = False
 def main(threadName):
     global gui
     global resetVar
+
+    pygame
+    pygame.init()
+    pygame.mixer.init()
+
     firstSongLoaded = False
     print 'main thread called'
     counter = 0;
@@ -287,11 +277,11 @@ def main(threadName):
         lst = []
 
         if x == "RFID":
-
+            
             for i in range(0, 5):
                 lst.append(ser.readline().rstrip())
+            
             if resetVar == False:
-
                 updateUser(lst)
             else:
                 if(checkVip(User(lst))):
@@ -308,19 +298,17 @@ def main(threadName):
             if( not firstSongLoaded):
                 currentSong = getNextSong()
                 nextSong = getNextSong()
-
+                firstSongLoaded = True
             else:
                 currentSong = nextSong
                 nextSong = getNextSong()
 
             if(currentSong != ''):
                 pygame.mixer.music.load(currentSong)
-                
                 gui.updateSong(currentSong)
                 gui.updateNextSong(nextSong)
-
                 pygame.mixer.music.play()
-    print 'done loop'
+    
 
 
 #create the GUI
