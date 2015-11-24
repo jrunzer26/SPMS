@@ -12,7 +12,8 @@ class GUI (object):
 
     def updateRFID(self,tag):
         print tag
-        self.rfidString.set(tag)
+        self.rfidtext["text"] = tag
+        
 
     def updatePauseButton(self,status):
         self.pause2["text"] = status
@@ -34,8 +35,7 @@ class GUI (object):
         h = self.root.winfo_screenheight()
         self.root.geometry("%dx%d+0+0"%(w,h))
 
-        self.rfidString = StringVar()
-        self.rfidString.set('reset stuff')
+
 
         rfidtag="5465923269"
         self.root.configure(background="#005c99")
@@ -43,7 +43,7 @@ class GUI (object):
         self.rfid = Label(text="Last Rfid Tap",relief=RIDGE,font=(font_style, font_size),width=20)
         self.up_next = Label(text="Up next",relief=RIDGE,font=(font_style, font_size),width=20)
         self.Csongtext = Label(text="Current Song",relief=RIDGE,font=(font_style, font_size),width=30)
-        self.rfidtext = Label(textvariable = self.rfidString,relief=RIDGE,font=(font_style, font_size),width=30)
+        self.rfidtext = Label(text = "RFID STUFF",relief=RIDGE,font=(font_style, font_size),width=30)
         self.up_nexttext = Label(text="Up Next Song",relief=RIDGE,font=(font_style, font_size),width=30)
 
 
@@ -60,7 +60,7 @@ class GUI (object):
         self.reset2 = Button(self.root, text ="Reset",bg = "red",font=(font_style, font_size), command = r)
         self.pause2 = Button(self.root, text ="Pause",relief=GROOVE,bg = "#00e64d", font=(font_style, font_size),
                       command = p)
-        self.play2 = Button(self.root, text ="Play",font=(font_style, font_size), command = p)
+        
         self.skip2 = Button(self.root, text ="Skip", font=(font_style, font_size), command = s)
         self.skip2.grid(row=4,column=1,ipadx=20, pady=30)
         self.pause2.grid(row=4,column=3,ipadx=14,padx=10)

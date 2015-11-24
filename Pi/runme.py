@@ -237,6 +237,7 @@ def pausePlay():
     
     global pauseStatus
     global userList
+    global gui
     if pauseStatus == 0 and not len(userList) == 0:
         pygame.mixer.music.pause()
         pauseStatus = 1
@@ -297,8 +298,7 @@ def main(threadName):
                     reset()
                 else:
 
-                    ser.write("INVALID VIP")
-                    ser.write(')')
+                    gui.updateRFID('INVALID VIP')
                     print("INVALID VIP")
                 resetVar = False
 
@@ -315,7 +315,7 @@ def main(threadName):
 
             if(currentSong != ''):
                 pygame.mixer.music.load(currentSong)
-
+                
                 gui.updateSong(currentSong)
                 gui.updateNextSong(nextSong)
 
