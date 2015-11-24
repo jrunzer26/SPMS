@@ -20,6 +20,7 @@ userRemovedList = []
 songIndex = 0
 vipUser = User([00,00,00,00,00])
 blankUser = User([0,0,0,0,0])
+global gui
 
 
 
@@ -255,52 +256,57 @@ def skip(self):
 """This is the input stream from the arduino to the Pi"""
 resetVar = False
 
+
+
+def main():
+    global gui
+    firstSongLoaded = False
+    while 1:
+        x = ""
+
+        if ser.inWaiting() > 0:
+            x = ser.readline().rstrip()
+            print "Arduino input:" + x
+
+        lst = []
+
+        if x == "RFID":
+
+            for i in range(0, 5):
+                lst.append(ser.readline().rstrip())
+            if resetVar == False:
+
+                updateUser(lst)
+            else:
+                if(checkVip(User(lst))):
+                    reset()
+                else:
+
+                    ser.write("INVALID VIP")
+                    ser.write(')')
+                    print("INVALID VIP")
+                resetVar = False
+
+
+
+        if len(userList) > 0 and not pygame.mixer.music.get_busy()  :
+            if( not firstSongLoaded):
+                currentSong = getNextSong()
+                nextSong = getNextSong()
+
+            else:
+                currentSong = nextSong
+                nextSong = getNextSong()
+
+            if(currentSong != ''):
+                pygame.mixer.music.load(currentSong)
+
+                gui.updateSong(currentSong)
+                gui.updateNextSong(nextSong)
+
+                pygame.mixer.music.play()
+
+
 #create the GUI
 gui = GUI(reset,pausePlay,skip)
-
-firstSongLoaded = False
-while 1:
-    x = ""
-
-    if ser.inWaiting() > 0:
-        x = ser.readline().rstrip()
-        print "Arduino input:" + x
-
-    lst = []
-
-    if x == "RFID":
-
-        for i in range(0, 5):
-            lst.append(ser.readline().rstrip())
-        if resetVar == False:
-
-            updateUser(lst)
-        else:
-            if(checkVip(User(lst))):
-                reset()
-            else:
-
-                ser.write("INVALID VIP")
-                ser.write(')')
-                print("INVALID VIP")
-            resetVar = False
-
-
-
-    if len(userList) > 0 and not pygame.mixer.music.get_busy()  :
-        if( not firstSongLoaded):
-            currentSong = getNextSong()
-            nextSong = getNextSong()
-
-        else:
-            currentSong = nextSong
-            nextSong = getNextSong()
-
-        if(currentSong != ''):
-            pygame.mixer.music.load(currentSong)
-
-            gui.updateSong(currentSong)
-            gui.updateNextSong(nextSong)
-
-            pygame.mixer.music.play()
-
+gui.getRoot().mainloop()
