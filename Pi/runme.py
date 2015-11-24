@@ -324,6 +324,6 @@ def main(threadName):
 
 
 #create the GUI
-gui = GUI(reset,pausePlay,skip)
+gui = GUI(resetCallback,pausePlay,skip)
 thread.start_new(main,('main thread',))
 gui.getRoot().mainloop()

@@ -11,10 +11,11 @@ class GUI (object):
         self.up_nexttext["text"] = song
 
     def updateRFID(self,tag):
-        self.rfidtext.set(tag)
+        print tag
+        self.rfidString.set(tag)
 
     def updatePauseButton(self,status):
-        self.pause["text"] = status
+        self.pause2["text"] = status
 
 
     def __init__(self,reset,pausePlay,skip):
@@ -33,8 +34,8 @@ class GUI (object):
         h = self.root.winfo_screenheight()
         self.root.geometry("%dx%d+0+0"%(w,h))
 
-        rfidString = StringVar()
-        rfidString.set('reset stuff')
+        self.rfidString = StringVar()
+        self.rfidString.set('reset stuff')
 
         rfidtag="5465923269"
         self.root.configure(background="#005c99")
@@ -42,7 +43,7 @@ class GUI (object):
         self.rfid = Label(text="Last Rfid Tap",relief=RIDGE,font=(font_style, font_size),width=20)
         self.up_next = Label(text="Up next",relief=RIDGE,font=(font_style, font_size),width=20)
         self.Csongtext = Label(text="Current Song",relief=RIDGE,font=(font_style, font_size),width=30)
-        self.rfidtext = Label(textvariable = rfidString,relief=RIDGE,font=(font_style, font_size),width=30)
+        self.rfidtext = Label(textvariable = self.rfidString,relief=RIDGE,font=(font_style, font_size),width=30)
         self.up_nexttext = Label(text="Up Next Song",relief=RIDGE,font=(font_style, font_size),width=30)
 
 
