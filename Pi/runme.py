@@ -24,6 +24,12 @@ pauseStatus = 0
 
 # checks to see if a tag is tapped on the rfid reader
 
+def sys_quit():
+    sys.quit()
+
+def quit_callback():
+    gui.quit()
+
 def resetCallback():
     gui.updateRFID('Tap VIP User')
     global resetVar
@@ -304,7 +310,7 @@ def main(threadName):
 
 
 #create the GUI
-gui = GUI(resetCallback,pausePlay,skip)
+gui = GUI(resetCallback,pausePlay,skip, quit_callback)
 thread.start_new(main,('main thread',))
 #gui.getRoot().wm_protocol('WM_DELETE_WINDOW', quit)
 gui.getRoot().mainloop()
