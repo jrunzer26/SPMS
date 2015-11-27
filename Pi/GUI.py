@@ -9,6 +9,7 @@ class GUI (object):
     def quit(self): 
         print 'inside quit'
         self.root.destroy()
+        sys.exit()
         #root.destroy()
 
     def updateSong(self,song):
