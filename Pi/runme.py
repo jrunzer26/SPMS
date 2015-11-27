@@ -228,7 +228,7 @@ def pausePlay():
     if pauseStatus == 0 and not len(userList) == 0:
         pygame.mixer.music.pause()
         pauseStatus = 1
-        gui.updatePauseButton("Play")
+        gui.updatePauseButton("Play  ")
     elif len(finalSongList) > 0:
         gui.updatePauseButton("Pause")
         pygame.mixer.music.unpause()
