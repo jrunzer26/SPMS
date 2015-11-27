@@ -8,6 +8,7 @@ class GUI (object):
     
     def quit(self): 
         print 'inside quit'
+        self.root.protocol('WM_DELETE_WINDOW', quit)
         #root.destroy()
 
     def updateSong(self,song):
@@ -72,6 +73,8 @@ class GUI (object):
         self.pause2.grid(row=4,column=3,ipadx=14,padx=10)
         self.reset2.grid(row=4,column=4,ipadx=20,padx=10)
 
+        self.quit = quit
         
+
     def getRoot(self):
         return self.root
