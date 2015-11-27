@@ -44,8 +44,10 @@ class GUI (object):
         font_style = "Arial"
         font_size = 20
         self.root = Tk()
-        w = self.root.winfo_screenwidth()
-        h = self.root.winfo_screenheight()
+        #w = self.root.winfo_screenwidth()
+        #h = self.root.winfo_screenheight()
+        w = 200
+        h = 100
         self.root.geometry("%dx%d+0+0"%(w,h))
 
 
