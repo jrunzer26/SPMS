@@ -7,7 +7,7 @@ class GUI (object):
     
     
     def quit(self): 
-        self.quit()
+        sys.quit()
 
     def updateSong(self,song):
         self.Csongtext["text"] = song
@@ -73,6 +73,6 @@ class GUI (object):
 
         self.quit = quit
         self.root.protocol('WM_DELETE_WINDOW', quit)
-        
+
     def getRoot(self):
         return self.root
