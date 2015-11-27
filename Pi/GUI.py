@@ -55,9 +55,9 @@ class GUI (object):
         self.Csong = Label(text="What's playing now:",bg = "#00e64d",font=(font_style, font_size),relief=RIDGE,width=20)
         self.rfid = Label(text="Last Rfid Tap",relief=RIDGE,font=(font_style, font_size),width=20)
         self.up_next = Label(text="Up next",relief=RIDGE,font=(font_style, font_size),width=20)
-        self.Csongtext = Label(text="Current Song",relief=RIDGE,font=(font_style, font_size),width=30)
-        self.rfidtext = Label(text = "RFID STUFF",relief=RIDGE,font=(font_style, font_size),width=30)
-        self.up_nexttext = Label(text="Up Next Song",relief=RIDGE,font=(font_style, font_size),width=30)
+        self.Csongtext = Label(text="",relief=RIDGE,font=(font_style, font_size),width=30)
+        self.rfidtext = Label(text = "",relief=RIDGE,font=(font_style, font_size),width=30)
+        self.up_nexttext = Label(text="",relief=RIDGE,font=(font_style, font_size),width=30)
 
 
         self.Csong.grid(row=1,column=1, padx =10, pady = 27)
