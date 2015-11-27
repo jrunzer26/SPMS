@@ -74,7 +74,7 @@ class GUI (object):
         self.skip2.grid(row=4,column=1,ipadx=20, pady=30)
         self.pause2.grid(row=4,column=3,ipadx=14,padx=10)
         self.reset2.grid(row=4,column=4,ipadx=20,padx=10)
-        self.kill.grid(rpw=4,column =5, ipadx = 10, padx=10)
+        self.kill.grid(row=4,column =5, ipadx = 10, padx=10)
 
 
     def getRoot(self):
