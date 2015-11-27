@@ -23,8 +23,6 @@ except Exception:
 pauseStatus = 0
 
 # checks to see if a tag is tapped on the rfid reader
-def quit():
-    exit()
 
 def resetCallback():
     gui.updateRFID('Tap VIP User')
