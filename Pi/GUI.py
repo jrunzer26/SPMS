@@ -46,8 +46,8 @@ class GUI (object):
         self.root = Tk()
         #w = self.root.winfo_screenwidth()
         #h = self.root.winfo_screenheight()
-        w = 900
-        h = 400
+        w = 850
+        h = 350
         self.root.geometry("%dx%d+0+0"%(w,h))
 
 
