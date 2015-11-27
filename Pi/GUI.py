@@ -27,7 +27,7 @@ class GUI (object):
         self.pause2.config(width = 10)
 
 
-    def __init__(self,reset,pausePlay,skip):
+    def __init__(self,reset,pausePlay,skip, quit):
         def r ():
             reset()
         def p ():
