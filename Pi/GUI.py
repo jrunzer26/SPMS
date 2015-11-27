@@ -4,6 +4,11 @@ import sys
 from Tkinter import *
 
 class GUI (object):
+    root.protocol('WM_DELETE_WINDOW', quit)
+    
+    def quit:
+        root.quit()
+
     def updateSong(self,song):
         self.Csongtext["text"] = song
 

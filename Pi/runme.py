@@ -31,7 +31,6 @@ pauseStatus = 0
 
 # checks to see if a tag is tapped on the rfid reader
 
-
 def resetCallback():
     gui.updateRFID('Tap VIP User')
     global resetVar
