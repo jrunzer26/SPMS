@@ -64,8 +64,8 @@ class GUI (object):
 
 
         self.reset2 = Button(self.root, text ="Reset",bg = "red",font=(font_style, font_size), command = r)
-        self.pause2 = Button(self.root, config(width = 20) text ="Pause",relief=GROOVE,bg = "#00e64d", font=(font_style, font_size), command = p)
-        
+        self.pause2 = Button(self.root, text ="Pause",relief=GROOVE,bg = "#00e64d", font=(font_style, font_size), command = p)
+        self.pause2.config(width = 10)
         self.skip2 = Button(self.root, text ="Skip", font=(font_style, font_size), command = s)
         self.skip2.grid(row=4,column=1,ipadx=20, pady=30)
         self.pause2.grid(row=4,column=3,ipadx=14,padx=10)
