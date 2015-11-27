@@ -10,7 +10,7 @@ class GUI (object):
         print 'go to hell'
         self.root.destroy()
         self.root.quit()
-        
+
     def updateSong(self,song):
         self.Csongtext["text"] = song
 
