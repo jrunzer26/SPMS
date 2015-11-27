@@ -6,7 +6,7 @@ from Tkinter import *
 class GUI (object):
     
     
-    def quit(): 
+    def quit(self): 
         self.root.destroy
 
     def updateSong(self,song):
