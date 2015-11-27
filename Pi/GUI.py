@@ -73,7 +73,6 @@ class GUI (object):
         self.pause2.grid(row=4,column=3,ipadx=14,padx=10)
         self.reset2.grid(row=4,column=4,ipadx=20,padx=10)
 
-        self.root.protocol('WM_DELETE_WINDOW', quit)
-
+        
     def getRoot(self):
         return self.root
