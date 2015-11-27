@@ -30,9 +30,9 @@ except Exception:
 pauseStatus = 0
 
 # checks to see if a tag is tapped on the rfid reader
-def quit():
-    print 'inside runme quit'
-    sys.exit()
+#def quit():
+ #   print 'inside runme quit'
+  #  sys.exit()
 
 def resetCallback():
     gui.updateRFID('Tap VIP User')

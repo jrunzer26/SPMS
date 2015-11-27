@@ -6,10 +6,10 @@ from Tkinter import *
 class GUI (object):
     
     
-    def quit(self): 
-        print 'inside quit'
-        self.root.quit()
-        sys.quit()
+    #def quit(self): 
+     #   print 'inside quit'
+      #  self.root.quit()
+       # sys.quit()
 
     def updateSong(self,song):
         self.Csongtext["text"] = song
