@@ -8,9 +8,9 @@ class GUI (object):
     
     def quit(self): 
         print 'go to hell'
-        self.root.destroy
-        sys.exit()
-
+        self.root.destroy()
+        self.root.quit()
+        
     def updateSong(self,song):
         self.Csongtext["text"] = song
 
