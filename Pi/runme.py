@@ -7,10 +7,6 @@ import serial
 import pygame
 import thread
 
-    
-
-
-
 finalSongList = []
 songsPlayed = []
 userList = []
@@ -20,9 +16,6 @@ vipUser = User([00,00,00,00,00])
 blankUser = User([0,0,0,0,0])
 global gui
 
-
-
-
 try:
     ser = serial.Serial('/dev/ttyACM1', 9600)
 except Exception:
@@ -31,7 +24,7 @@ pauseStatus = 0
 
 # checks to see if a tag is tapped on the rfid reader
 def quit():
-    sys.exit()
+    exit()
 
 def resetCallback():
     gui.updateRFID('Tap VIP User')
