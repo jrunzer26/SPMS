@@ -36,7 +36,7 @@ class GUI (object):
         def s ():
             skip()
         def q ():
-            sys_quit()
+            quit()
 
         font_style = "Arial"
         font_size = 20

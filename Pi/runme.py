@@ -24,7 +24,7 @@ pauseStatus = 0
 
 # checks to see if a tag is tapped on the rfid reader
 
-def sys_quit():
+def quit():
     sys.quit()
 
 def quit_callback():
