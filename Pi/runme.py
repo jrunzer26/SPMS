@@ -7,6 +7,7 @@ import serial
 import pygame
 import thread
 import sys
+import subprocess
 
 finalSongList = []
 songsPlayed = []
@@ -26,7 +27,8 @@ pauseStatus = 0
 # checks to see if a tag is tapped on the rfid reader
 
 def quit():
-    sys.exit()
+    print 'inside quit 2'
+    subprocess.call('./lol.sh')
 
 def quit_callback():
     gui.quit()
@@ -313,5 +315,5 @@ def main(threadName):
 #create the GUI
 gui = GUI(resetCallback,pausePlay,skip, quit_callback)
 thread.start_new(main,('main thread',))
-#gui.getRoot().wm_protocol('WM_DELETE_WINDOW', quit)
+gui.getRoot().wm_protocol('WM_DELETE_WINDOW', quit)
 gui.getRoot().mainloop()
