@@ -71,7 +71,7 @@ class GUI (object):
         self.skip2 = Button(self.root, text ="Skip", font=(font_style, font_size), command = s)
 
         #self.kill = Button(self.root, text = "BYE", bg = "orange", font = (font_style, font_size), command = self.root.destroy)
-        self.kill = Button(self.root, text = "BYE", bg = "orange", font = (font_style, font_size), command = self.root.quit)
+        self.kill = Button(self.root, text = "BYE", bg = "orange", font = (font_style, font_size), command = self.quit)
         self.skip2.grid(row=4,column=1,ipadx=20, pady=30)
         self.pause2.grid(row=4,column=3,ipadx=14,padx=10)
         self.reset2.grid(row=4,column=4,ipadx=20,padx=10)
