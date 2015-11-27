@@ -6,6 +6,7 @@ from GUI import GUI
 import serial
 import pygame
 import thread
+import sys
 
 finalSongList = []
 songsPlayed = []
