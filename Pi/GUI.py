@@ -6,9 +6,9 @@ from Tkinter import *
 class GUI (object):
     
     
-    def quit(self): 
+    def quit(): 
         print 'go to hell'
-        self.root.destroy()
+        root.destroy()
 
     def updateSong(self,song):
         self.Csongtext["text"] = song
