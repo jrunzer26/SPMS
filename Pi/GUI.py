@@ -23,6 +23,7 @@ class GUI (object):
 
     def updatePauseButton(self,status):
         self.pause2["text"] = status
+        self.pause2.config(width = 20)
 
 
     def __init__(self,reset,pausePlay,skip):
