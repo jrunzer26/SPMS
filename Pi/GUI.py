@@ -8,7 +8,6 @@ class GUI (object):
     
     def quit(self): 
         print 'inside quit'
-        self.root.protocol('WM_DELETE_WINDOW', quit)
         self.root.destroy()
         self.root.quit()
         #root.destroy()
@@ -76,7 +75,7 @@ class GUI (object):
         self.reset2.grid(row=4,column=4,ipadx=20,padx=10)
 
         self.quit = quit
-        
+        self.root.protocol('WM_DELETE_WINDOW', quit)
 
     def getRoot(self):
         return self.root
