@@ -6,8 +6,8 @@ from Tkinter import *
 class GUI (object):
     
     
-    def quit_pressed(self): 
-        quit()
+    def quit_pressed(): 
+        root.destroy
 
     def updateSong(self,song):
         self.Csongtext["text"] = song
