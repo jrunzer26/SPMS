@@ -8,7 +8,7 @@ class GUI (object):
     
     def quit(self): 
         print 'inside quit'
-        self.root.quit()
+        root.destroy()
 
     def updateSong(self,song):
         self.Csongtext["text"] = song
