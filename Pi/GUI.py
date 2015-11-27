@@ -9,6 +9,8 @@ class GUI (object):
     def quit(self): 
         print 'inside quit'
         self.root.protocol('WM_DELETE_WINDOW', quit)
+        self.root.destroy()
+        self.root.quit()
         #root.destroy()
 
     def updateSong(self,song):
