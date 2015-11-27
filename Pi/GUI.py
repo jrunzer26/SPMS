@@ -63,9 +63,9 @@ class GUI (object):
         self.Csong.grid(row=1,column=1, padx =10, pady = 27)
         self.rfid.grid(row=2,column=1)
         self.up_next.grid(row=3,column=1, pady = 27)
-        self.Csongtext.grid(row=1,column=3,columnspan=2, padx=10)
-        self.rfidtext.grid(row=2,column=3,columnspan=2)
-        self.up_nexttext.grid(row=3,column=3,columnspan=2)
+        self.Csongtext.grid(row=1,column=2,columnspan=2, padx=10)
+        self.rfidtext.grid(row=2,column=2,columnspan=2, pady=10)
+        self.up_nexttext.grid(row=3,column=2,columnspan=2, pady = 10)
 
 
 
