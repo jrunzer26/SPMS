@@ -6,8 +6,9 @@ from Tkinter import *
 class GUI (object):
     
     
-    def quit(): 
+    def quit(self): 
         print 'inside quit'
+        self.root.quit()
         sys.quit()
 
     def updateSong(self,song):
