@@ -313,5 +313,5 @@ def main(threadName):
 #create the GUI
 gui = GUI(resetCallback,pausePlay,skip)
 thread.start_new(main,('main thread',))
-gui.protocol('WM_DELETE_WINDOW', quit)
+gui.getRoot().protocol('WM_DELETE_WINDOW', quit)
 gui.getRoot().mainloop()
