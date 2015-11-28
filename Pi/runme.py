@@ -17,6 +17,10 @@ songIndex = 0
 vipUser = User([00,00,00,00,00])
 blankUser = User([0,0,0,0,0])
 global gui
+global firstSongLoaded
+global currentSong
+global nextSong
+global skipBool
 
 try:
     ser = serial.Serial('/dev/ttyACM1', 9600)
@@ -239,15 +243,31 @@ def pausePlay():
 
 
 def skip():
-    print 'skip called'
     global pauseStatus
+    global firstSongLoaded
+    global currentSong
+    global nextSong
+    global skipBool
+    skipBool = True
     if len(userList) >= 1:
-        pauseStatus = 0
-        skipSongName = getNextSong()
-        pygame.mixer.music.load(skipSongName)
-        print "Playing: " + skipSongName
-        pygame.mixer.music.play()
-
+    	if( not firstSongLoaded):
+        	currentSong = getNextSong()
+                if (len(userList) > 0):
+                        nextSong = getNextSong()
+                firstSongLoaded = True
+	else:
+                if (currentSong != nextSong):
+                        currentSong = nextSong
+                else:
+                        currentSong = ''
+                if (len(userList) > 0):
+                        nextSong = getNextSong()
+    		pygame.mixer.music.load(currentSong)
+                gui.updateSong(currentSong)
+                gui.updateNextSong(nextSong)
+                pygame.mixer.music.play()
+	skipBool = False
+	print 'skip called'
 
 """This is the input stream from the arduino to the Pi"""
 resetVar = False
@@ -262,7 +282,13 @@ def main(threadName):
     pygame.init()
     pygame.mixer.init()
 
+    global skipBool
+    skipBool = False
+
+    global firstSongLoaded
     firstSongLoaded = False
+    global currentSong
+    global nextSong
     print 'main thread called'
     counter = 0;
     while 1:
@@ -295,21 +321,12 @@ def main(threadName):
 
 
 
-        if len(userList) > 0 and not pygame.mixer.music.get_busy()  :
-            if( not firstSongLoaded):
-                currentSong = getNextSong()
-                nextSong = getNextSong()
-                firstSongLoaded = True
-            else:
-                currentSong = nextSong
-                nextSong = getNextSong()
-
-            if(currentSong != ''):
-                pygame.mixer.music.load(currentSong)
-                gui.updateSong(currentSong)
-                gui.updateNextSong(nextSong)
-                pygame.mixer.music.play()
-    
+        if len(userList) > 0 and not pygame.mixer.music.get_busy() and skipBool == False:
+		skip()        
+		print 'in skip loop'
+	        skipBool = False
+               	
+		   
 
 
 #create the GUI
