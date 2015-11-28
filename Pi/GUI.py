@@ -10,7 +10,7 @@ class GUI (object):
     
     def quit(self): 
         print 'inside quit'
-        subprocess.call('./lol.sh')
+        subprocess.call('./quit.sh')
         #self.root.destroy()
         #sys.exit()
         #root.destroy()

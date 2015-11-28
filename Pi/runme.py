@@ -32,7 +32,7 @@ pauseStatus = 0
 
 def quit():
     print 'inside quit 2'
-    subprocess.call('./lol.sh')
+    subprocess.call('./quit.sh')
 
 def quit_callback():
     gui.quit()
