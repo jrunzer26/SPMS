@@ -254,6 +254,7 @@ def skip():
     global nextSong
     global skipBool
     global initialized
+    global gui
     skipBool = True
     if initialized:
         if len(userList) >= 1:
@@ -336,6 +337,7 @@ def main(threadName):
 
 
 #create the GUI
+nextSong = ""
 gui = GUI(resetCallback,pausePlay,skip, quit_callback)
 thread.start_new(main,('main thread',))
 gui.getRoot().wm_protocol('WM_DELETE_WINDOW', quit)
