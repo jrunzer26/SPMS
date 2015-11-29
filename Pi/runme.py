@@ -21,6 +21,8 @@ global firstSongLoaded
 global currentSong
 global nextSong
 global skipBool
+global initialized
+initialized = False
 
 try:
     ser = serial.Serial('/dev/ttyACM1', 9600)
@@ -197,6 +199,9 @@ def createPlaylist():
     else:
         finalSongList.append('')
 
+
+
+
 """Gets the next song to be played"""
 def getNextSong():
     global finalSongList
@@ -248,24 +253,22 @@ def skip():
     global currentSong
     global nextSong
     global skipBool
+    global initialized
     skipBool = True
-    if len(userList) >= 1:
-    	if( not firstSongLoaded):
-        	currentSong = getNextSong()
-                if (len(userList) > 0):
-                        nextSong = getNextSong()
+    if initialized:
+        if len(userList) >= 1:
+            if( not firstSongLoaded):
+                currentSong = getNextSong()
+                #nextSong = getNextSong()
                 firstSongLoaded = True
-	else:
-                if (currentSong != nextSong):
-                        currentSong = nextSong
-                else:
-                        currentSong = ''
-                if (len(userList) > 0):
-                        nextSong = getNextSong()
-    		pygame.mixer.music.load(currentSong)
-                gui.updateSong(currentSong)
-                gui.updateNextSong(nextSong)
-                pygame.mixer.music.play()
+            else:
+                currentSong = nextSong
+                nextSong = getNextSong()
+
+            pygame.mixer.music.load(currentSong)
+            gui.updateSong(currentSong)
+            gui.updateNextSong(nextSong)
+            pygame.mixer.music.play()
 	skipBool = False
 	print 'skip called'
 
@@ -291,7 +294,9 @@ def main(threadName):
     global nextSong
     print 'main thread called'
     counter = 0;
+    initialized = True
     while 1:
+
         x = ""
         
         if counter %100000 == 1 :
