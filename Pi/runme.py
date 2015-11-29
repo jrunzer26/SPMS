@@ -260,11 +260,10 @@ def skip():
         if len(userList) >= 1:
             if( not firstSongLoaded):
                 currentSong = getNextSong()
-                #nextSong = getNextSong()
                 firstSongLoaded = True
             else:
                 currentSong = nextSong
-                nextSong = getNextSong()
+            nextSong = getNextSong()
 
             pygame.mixer.music.load(currentSong)
             gui.updateSong(currentSong)
