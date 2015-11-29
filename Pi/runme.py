@@ -130,6 +130,8 @@ def updateUser(rfidTag):
         createPlaylist()
 
 
+
+
 """Gets the song list for the users currently in the system"""
 def getSongList():
     global userList
@@ -320,6 +322,10 @@ def main(threadName):
             
             if resetVar == False:
                 updateUser(lst)
+                if(len(lst) == 0):
+                    nextSong == ""
+                    gui.updateSong(nextSong)
+                    firstSongLoaded = False
             else:
                 if(checkVip(User(lst))):
                     reset()
