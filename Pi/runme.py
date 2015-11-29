@@ -55,6 +55,9 @@ def reset():
     global blankUser
     global finalSongList
     global songsPlayed
+    global firstSongLoaded
+    global gui
+    global nextSong
 
     userList = []
     songsPlayed = []
@@ -62,6 +65,9 @@ def reset():
     createPlaylist()
     songIndex = 0
     vipUser = blankUser
+    nextSong = ''
+    gui.updateNextSong(nextSong)
+    firstSongLoaded = False
 
 def checkVip(user):
     global  vipUser
@@ -325,7 +331,7 @@ def main(threadName):
                 if(len(userList) == 0):
                     print 'updating song'
                     nextSong = ''
-                    gui.updateSong(nextSong)
+                    gui.updateNextSong(nextSong)
                     firstSongLoaded = False
             else:
                 if(checkVip(User(lst))):
