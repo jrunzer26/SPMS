@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d21532c-8f79-412a-8b54-a550b8ee1745" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pi/GUI.py" afterPath="$PROJECT_DIR$/Pi/GUI.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pi/runme.py" afterPath="$PROJECT_DIR$/Pi/runme.py" />
     </list>
     <ignored path="SPMS.iws" />
@@ -26,8 +27,8 @@
       <file leaf-file-name="runme.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pi/runme.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42857143">
-              <caret line="210" column="21" selection-start-line="210" selection-start-column="21" selection-end-line="210" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.42069742">
+              <caret line="320" column="7" selection-start-line="320" selection-start-column="7" selection-end-line="320" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -36,12 +37,9 @@
       <file leaf-file-name="GUI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pi/GUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding>
-                <element signature="e#19#29#0" expanded="true" />
-                <marker date="1448754657283" expanded="true" signature="2947:2955" placeholder="..." />
-              </folding>
+            <state vertical-scroll-proportion="-10.206897">
+              <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -373,10 +371,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#19#29#0" expanded="true" />
-            <marker date="1448754657283" expanded="true" signature="2947:2955" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -396,19 +391,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Pi/GUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="e#19#29#0" expanded="true" />
-            <marker date="1448754657283" expanded="true" signature="2947:2955" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-10.206897">
+          <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pi/runme.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42857143">
-          <caret line="210" column="21" selection-start-line="210" selection-start-column="21" selection-end-line="210" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.42069742">
+          <caret line="320" column="7" selection-start-line="320" selection-start-column="7" selection-end-line="320" selection-end-column="7" />
           <folding />
         </state>
       </provider>

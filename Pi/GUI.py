@@ -55,7 +55,7 @@ class GUI (object):
         rfidtag="5465923269"
         self.root.configure(background="#005c99")
         self.Csong = Label(text="What's playing now:",font=(font_style, font_size),relief=RIDGE,width=20)
-        self.rfid = Label(text="Last Rfid Tap",relief=RIDGE,font=(font_style, font_size),width=20)
+        self.rfid = Label(text="Last RFID Tap",relief=RIDGE,font=(font_style, font_size),width=20)
         self.up_next = Label(text="Up next",relief=RIDGE,font=(font_style, font_size),width=20)
         self.Csongtext = Label(text="",relief=RIDGE,font=(font_style, font_size),width=30)
         self.rfidtext = Label(text = "",relief=RIDGE,font=(font_style, font_size),width=30)

@@ -271,8 +271,8 @@ def skip():
             gui.updateSong(currentSong)
             gui.updateNextSong(nextSong)
             pygame.mixer.music.play()
-	skipBool = False
-	print 'skip called'
+    skipBool = False
+    print 'skip called'
 
 """This is the input stream from the arduino to the Pi"""
 resetVar = False
@@ -330,11 +330,11 @@ def main(threadName):
 
 
         if len(userList) > 0 and not pygame.mixer.music.get_busy() and skipBool == False:
-		skip()        
-		print 'in skip loop'
-	        skipBool = False
-               	
-		   
+            skip()
+            print 'in skip loop'
+            skipBool = False
+
+
 
 
 #create the GUI
