@@ -292,6 +292,7 @@ def main(threadName):
     firstSongLoaded = False
     global currentSong
     global nextSong
+    global initialized
     print 'main thread called'
     counter = 0;
     initialized = True
