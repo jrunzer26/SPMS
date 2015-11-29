@@ -207,6 +207,8 @@ def getNextSong():
     global finalSongList
     global songIndex
     global songsPlayed
+    if(songIndex >= len(finalSongList)):
+        songIndex = 0
     while(hasnotbeenPlayed(finalSongList[songIndex])):
         songIndex += 1
         if(songIndex >= (len(finalSongList))):
