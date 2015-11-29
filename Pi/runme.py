@@ -323,7 +323,7 @@ def main(threadName):
             if resetVar == False:
                 updateUser(lst)
                 if(len(lst) == 0):
-                    nextSong == ""
+                    nextSong = ''
                     gui.updateSong(nextSong)
                     firstSongLoaded = False
             else:
