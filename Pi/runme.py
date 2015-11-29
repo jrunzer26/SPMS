@@ -322,7 +322,8 @@ def main(threadName):
             
             if resetVar == False:
                 updateUser(lst)
-                if(len(lst) == 0):
+                if(len(userList) == 0):
+                    print 'updating song'
                     nextSong = ''
                     gui.updateSong(nextSong)
                     firstSongLoaded = False

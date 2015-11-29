@@ -26,8 +26,8 @@
       <file leaf-file-name="runme.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pi/runme.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5928009">
-              <caret line="326" column="44" selection-start-line="326" selection-start-column="44" selection-end-line="326" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.33295837">
+              <caret line="105" column="32" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -398,8 +398,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Pi/runme.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5928009">
-          <caret line="326" column="44" selection-start-line="326" selection-start-column="44" selection-end-line="326" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.33295837">
+          <caret line="105" column="32" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="32" />
           <folding />
         </state>
       </provider>
